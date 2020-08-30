@@ -7,4 +7,10 @@
 package definitions;
 
 public class Student {
+    private String[] nameOfStudent;
+    private long universityRollNumber;
+    private int numberOfBooksIssued;
+    private Book[] issuedBooks;
+
+
 }
