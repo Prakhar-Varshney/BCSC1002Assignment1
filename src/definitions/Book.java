@@ -6,15 +6,17 @@
  * */
 package definitions;
 
+import java.util.Objects;
+
 public class Book {
     private String bookName;
-    private String bookAuthorName;
-    private String isbnNumber;
+    private String authorName;
+    private String bookISBNNumber;
 
-    public Book() {
-        this.bookName = null;
-        this.bookAuthorName = null;
-        this.isbnNumber = null;
+    public Book(String bookName, String authorName, String bookISBNNumber) {
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.bookISBNNumber = bookISBNNumber;
     }
 
     public String getBookName() {
@@ -25,26 +27,25 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public String getBookAuthorName() {
-        return bookAuthorName;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setBookAuthorName(String bookAuthorName) {
-        this.bookAuthorName = bookAuthorName;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
-    public String getIsbnNumber() {
-        return isbnNumber;
+    public String getBookISBNNumber() {
+        return bookISBNNumber;
     }
 
-    public void setIsbnNumber(String isbnNumber) {
-        this.isbnNumber = isbnNumber;
+    public void setBookISBNNumber(String bookISBNNumber) {
+        this.bookISBNNumber = bookISBNNumber;
     }
 
+    @Override
     public String toString() {
-        return "Book Name" + getBookName() + "," +
-                "Authors Name" + getBookAuthorName() + "," +
-                "isbnNumber" + getIsbnNumber() + ".";
+        return "Name of book: " + getBookName() + "\nAuthor of book: " + getAuthorName() + "\nBook ISBN number: " + getBookISBNNumber();
     }
 
     @Override
@@ -53,12 +54,12 @@ public class Book {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
         return Objects.equals(bookName, book.bookName) &&
-                Objects.equals(bookAuthorName, book.bookAuthorName) &&
-                Objects.equals(isbnNumber, book.isbnNumber);
+                Objects.equals(authorName, book.authorName) &&
+                Objects.equals(bookISBNNumber, book.bookISBNNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookName, bookAuthorName, isbnNumber);
+        return Objects.hash(bookName, authorName, bookISBNNumber);
     }
 }
