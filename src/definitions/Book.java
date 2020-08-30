@@ -10,4 +10,10 @@ public class Book {
     private String bookName;
     private String bookAuthorName;
     private String isbnNumber;
-}
+
+    public Book() {
+        this.bookName = null;
+        this.bookAuthorName = null;
+        this.isbnNumber = null;
+
+    }
